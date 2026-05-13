@@ -203,6 +203,167 @@ Convert Your Text Into Stylish Voice Instantly
 <textarea id="text" placeholder="✨ Enter Your Text Here..."></textarea>
 </div><button class="btn" onclick="generateVoice()">
 🔊 GENERATE VOICE
+</button><button class="btn" onclick="downloadVoice()" style="margin-top:15px;">
+⬇️ DOWNLOAD VOICE
+</button><div class="status" id="status"></div><div class="footer">
+👑 MODDER KING MIRAJ 👑
+</div><div class="credit">
+⚡ Premium Voice Generator App ⚡
+</div></div><script>
+
+function generateVoice(){
+
+window.currentText = document.getElementById('text').value;
+
+    const text = document.getElementById('text').value;
+    const status = document.getElementById('status');
+
+    if(text.trim() === ''){
+        status.innerHTML = '❌ Please Enter Some Text';
+        return;
+    }
+
+    status.innerHTML = '🎧 Generating Premium Voice...';
+
+    setTimeout(() => {
+
+        const speech = new SpeechSynthesisUtterance(text);
+
+        speech.lang = 'en-US';
+        speech.rate = 1;
+        speech.pitch = 1.1;
+        speech.volume = 1;
+
+        window.speechSynthesis.speak(speech);
+
+        status.innerHTML = '✅ Voice Generated Successfully';
+
+    },2000);
+}
+
+
+function downloadVoice(){
+
+    const text = document.getElementById('text').value;
+    const status = document.getElementById('status');
+
+    if(text.trim() === ''){
+        status.innerHTML = '❌ Please Enter Some Text';
+        return;
+    }
+
+    status.innerHTML = '⬇️ Preparing Download...';
+
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=en&client=tw-ob`;
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'MirajHackzVoice.mp3';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    status.innerHTML = '✅ Voice Download Started';
+}
+
+</script></body>
+</html>    line-height:1.6;
+}
+
+.textarea-box{
+    margin-top:25px;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+    border:none;
+    outline:none;
+    resize:none;
+    border-radius:20px;
+    padding:18px;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    font-size:16px;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(0,255,213,0.15);
+}
+
+textarea:focus{
+    transform:scale(1.02);
+    box-shadow:0 0 25px rgba(0,255,213,0.35);
+}
+
+textarea::placeholder{
+    color:#bbbbbb;
+}
+
+.btn{
+    margin-top:22px;
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(90deg,#00ffd5,#00a2ff,#ff00ea);
+    background-size:300% 300%;
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    animation:gradientMove 4s infinite;
+    box-shadow:0 0 25px rgba(0,255,213,0.4);
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.btn:hover{
+    transform:scale(1.04);
+}
+
+.status{
+    margin-top:20px;
+    color:#00ffd5;
+    font-size:15px;
+    min-height:24px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{opacity:0.6;}
+    50%{opacity:1;}
+    100%{opacity:0.6;}
+}
+
+.footer{
+    margin-top:28px;
+    font-size:15px;
+    font-weight:600;
+    background:linear-gradient(90deg,#ffffff,#00ffd5,#ff00ea);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.credit{
+    margin-top:10px;
+    color:#aaaaaa;
+    font-size:13px;
+}
+
+</style></head>
+<body><div class="container"><div class="logo">🎤</div><div class="title">
+MIRAJ HACKZ
+</div><div class="subtitle">
+Premium AI Voice Assistant <br>
+Convert Your Text Into Stylish Voice Instantly
+</div><div class="textarea-box">
+<textarea id="text" placeholder="✨ Enter Your Text Here..."></textarea>
+</div><button class="btn" onclick="generateVoice()">
+🔊 GENERATE VOICE
 </button><div class="status" id="status"></div><div class="footer">
 👑 MODDER KING MIRAJ 👑
 </div><div class="credit">
